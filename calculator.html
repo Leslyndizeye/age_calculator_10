@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    
+    body{
+        background: rgb(59, 121, 214);
+    }
+    
+    h1{
+        color: rgb(40, 101, 192);
+        text-align: center;
+        background: #fff;
+        font-family: sans-serif;
+        font-size: 45px;
+        font-weight: 100;
+        padding: 10px;
+        margin: 0 auto;
+        width: fit-content;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .regis{
+        background: rgb(235, 234, 234);
+        width: 500px;
+        margin: 30px auto;
+        border-radius: 5px;
+        transition: 1s;
+        transform: scale(0);
+    }
+    
+    .regis h2{
+        background: #fff;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 40px;
+        color: rgb(17, 16, 102);
+        border-bottom: 3px solid #ccc;
+        margin-bottom: 20px;
+    }
+    
+    .regis .inputs{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: 50px 0;
+    }
+    
+    .regis .inputs div{
+        width: 27%;
+    }
+    
+    .regis .inputs div input{
+        width: 100%;
+        padding: 15px 20px 15px 15px;
+        border: 2px solid rgb(59, 121, 214);
+        outline: none;
+        border-radius: 2px;
+        color: rgb(59, 121, 214);
+        font-size: 20px;
+    }
+    
+    
+    .regis label{
+        color: rgb(40, 101, 192);
+        font-size: 20px;
+        font-weight: 100;
+        font-family: sans-serif;
+        display: block;
+        margin: 10px 0;
+    }
+    .regis button{
+        width: 150px;
+        margin: 20px auto;
+        display: block;
+        padding: 15px;
+        background: rgb(33, 82, 156);
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    .regis h3{
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+        color: rgb(17, 16, 102);
+    }
+</style>
+<body>
+
+    <h1>Simple Javascript Age Calculator</h1>
+
+    <div class="regis">
+        <h2>Age Calculator</h2>
+
+        <div class="inputs">
+            <div>
+                <label>Date</label>
+                <input class="input1" type="text">
+            </div>
+            
+            <div>
+                <label>Month</label>
+                <input class="input2" type="text">
+            </div>
+            
+            <div>
+                <label>Year</label>
+                <input class="input3" type="text">
+            </div>
+        </div>
+        
+        <button onclick="calculateAge()">Submit</button>
+        <h3>Output</h3>
+    </div>
+    
+<script>
+
+    setInterval(() => {
+        document.querySelector(".regis").style.transform = "scale(1)"
+    })
+
+    function calculateAge() {
+
+        var date = document.querySelector('.input1').value
+        var month = document.querySelector('.input2').value
+        var year = document.querySelector('.input3').value
+
+        if (month > 12 || year > 2024 || date > 31) {
+            document.querySelector('h3').innerHTML = "Inser valid date"
+        }else{
+            age = 2024 - year
+            month = 2 - month
+    
+            if (month < 0 ) {
+                var month = month + 12
+                age = age - 1
+                document.querySelector('h3').innerHTML = "You are " + age + " years old and "+ month + " months old" 
+            }else{
+                document.querySelector('h3').innerHTML = month + " " +age
+            }
+        }
+
+
+
+    }
+
+</script>
+
+</body>
+</html>
