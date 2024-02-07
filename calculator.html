@@ -149,7 +149,7 @@
         var year = document.querySelector('.input3').value
 
         if (month > 12 || year > 2024 || date > 31) {
-            document.querySelector('h3').innerHTML = "Inser valid date"
+            document.querySelector('h3').innerHTML = "not born yet"
         }else{
             age = 2024 - year
             month = 2 - month
@@ -159,7 +159,7 @@
                 age = age - 1
                 document.querySelector('h3').innerHTML = "You are " + age + " years old and "+ month + " months old" 
             }else{
-                document.querySelector('h3').innerHTML = month + " " +age
+                document.querySelector('h3').innerHTML = "You are " + age + " years old and "+ month + " months old" 
             }
         }
 
